@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <AppBar
       sx={{
+        position: "static",
         backgroundImage: `url(${headerBg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 100%",
@@ -14,6 +15,7 @@ const Header = () => {
         backgroundColor: "transparent",
         boxShadow: "none",
         height: 497,
+        width: "100%"
       }}
     >
       <Container maxWidth={false} sx={{ maxWidth: 1290, margin: "0 auto", }}>
