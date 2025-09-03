@@ -15,7 +15,6 @@ const Header = () => {
         backgroundColor: "transparent",
         boxShadow: "none",
         height: 497,
-        width: "100%"
       }}
     >
       <Container maxWidth={false} sx={{ maxWidth: 1290, margin: "0 auto", }}>
