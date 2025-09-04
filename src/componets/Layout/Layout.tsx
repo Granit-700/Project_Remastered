@@ -13,8 +13,8 @@ const Layout = () => {
         <Nav />
         <SideBar />
         <Main />
-        <Footer />
       </Container>
+      <Footer />
     </>
   );
 };
