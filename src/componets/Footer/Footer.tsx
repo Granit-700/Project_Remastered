@@ -13,6 +13,7 @@ const Footer = () => {
         flexDirection: "column",
         gap: "34px",
         backgroundColor: "#fff",
+        mt: "100px",
       }}
     >
       <Container maxWidth={false} sx={{ maxWidth: 1290, margin: "0 auto", }}>
