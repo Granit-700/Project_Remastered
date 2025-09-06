@@ -10,6 +10,7 @@ const SideBar = () => {
         padding: "24px 16px",
         borderRadius: "18px",
         mt: "122px",
+        mr: "30px",
       }}
     >
       <Box sx={{ display: "flex", justifyContent: "space-between", }}>

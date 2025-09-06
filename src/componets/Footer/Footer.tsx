@@ -1,4 +1,6 @@
-import { Box, Container, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import footerLogo from "../../assets/icons/footer_logo.svg";
 import vk from "../../assets/icons/vk_social.svg";
 import tg from "../../assets/icons/tg_social.svg";
