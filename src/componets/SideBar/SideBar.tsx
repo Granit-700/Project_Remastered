@@ -6,14 +6,14 @@ const SideBar = () => {
     <Box
       sx={{
         backgroundColor: "#fff",
-        width: "300px",
+        minWidth: "300px",
         padding: "24px 16px",
         borderRadius: "18px",
-        mt: "122px",
-        mr: "30px",
+        mt: "72px",
+        boxShadow: "0 0 2px 0.1px #B1B1B1"
       }}
     >
-      <Box sx={{ display: "flex", justifyContent: "space-between", }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center"}}>
         <Typography
           component="h2"
           sx={{
@@ -40,7 +40,7 @@ const SideBar = () => {
               fontSize: "12px",
             }}
           >
-            234
+            {"0"}
           </Typography>
         </Box>
       </Box>
