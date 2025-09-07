@@ -1,4 +1,5 @@
-import { Box, Container } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 import Header from "../Header/Header";
 import Nav from "../Nav/Nav";
 import SideBar from "../SideBar/SideBar";

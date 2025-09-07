@@ -1,15 +1,22 @@
-import { Box, Button, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import type { Category } from "../../types";
 
 interface NavButtonProps {
   category: Category;
+  selectedCategory: Category | null;
+  setSeletedCategory: (value: Category) => void;
 }
 
-const NavButton = ({ category }: NavButtonProps) => {
+const NavButton = ({ category, selectedCategory, setSeletedCategory }: NavButtonProps) => {  
   return (
     <Button
+      onClick={() => {
+        setSeletedCategory(category);
+      }}
       disableRipple
-      className={false ? "selected" : ""} // позже надо сделать
+      className={ selectedCategory?.id === category.id ? "selected" : ""}
       sx={{
         backgroundColor: "#fff",
         borderRadius: "50px",

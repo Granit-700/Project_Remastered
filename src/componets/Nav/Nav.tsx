@@ -1,11 +1,13 @@
 import Box from "@mui/material/Box";
 import NavButton from "./NavButton";
 import { useEffect } from "react";
-import { useCategories, useGetCategories } from "../../stores/categoryStore";
+import { useCategories, useGetCategories, useSelectedCategory, useSetSelectedCategory } from "../../stores/categoryStore";
 
 const Nav = () => {
-  const getCategories = useGetCategories()
   const categories = useCategories();
+  const getCategories = useGetCategories()
+  const selectedCategory = useSelectedCategory();
+  const setSelectedCategory = useSetSelectedCategory();
 
   useEffect(() => {
     getCategories();
@@ -23,7 +25,14 @@ const Nav = () => {
       }}
     >
       {categories.map((category) => {
-        return <NavButton key={category.id} category={category} />
+        return (
+          <NavButton
+            key={category.id}
+            category={category}
+            selectedCategory={selectedCategory}
+            setSeletedCategory={setSelectedCategory}
+          />
+        );
       })}
     </Box>
   );

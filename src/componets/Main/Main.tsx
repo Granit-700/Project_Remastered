@@ -3,10 +3,15 @@ import Box from "@mui/material/Box";
 import { useGetProducts, useProducts } from "../../stores/productStore";
 import { useEffect } from "react";
 import ProductCard from "./ProductCard";
+import { useSelectedCategory } from "../../stores/categoryStore";
 
 const Main = () => {
   const getProducts = useGetProducts();
   const products = useProducts();
+  const selectedCategory = useSelectedCategory();
+  const filteredProducts = products.filter((product) => {
+    return product.category.id === selectedCategory?.id;
+  });
 
   useEffect(() => {
     getProducts();
@@ -24,10 +29,10 @@ const Main = () => {
             mb: "24px"
           }}
         >
-          Синхронизировать
+          {selectedCategory?.name}
         </Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: "30px" }}>
-          {products.map((product) => {
+          {filteredProducts.map((product) => {
             return <ProductCard key={product.id} product={product} />
           })}
         </Box>
