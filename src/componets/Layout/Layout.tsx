@@ -6,10 +6,14 @@ import SideBar from "../SideBar/SideBar";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
 
-const Layout = () => {
+interface LayoutProps {
+  setIsOpenModal: (value: "signIn" | null) => void;
+}
+
+const Layout = ({ setIsOpenModal }: LayoutProps) => {
   return (
     <>
-      <Header />
+      <Header setIsOpenModal={setIsOpenModal} />
       <Container
         disableGutters
         maxWidth={false}

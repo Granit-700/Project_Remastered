@@ -8,7 +8,11 @@ import headerBg from "../../assets/images/background_header.png";
 import headerLogo from "../../assets/icons/header_logo.svg";
 import headerBurger from "../../assets/icons/header_burger.svg";
 
-const Header = () => {
+interface HeaderProps {
+  setIsOpenModal: (value: "signIn" | null) => void;
+}
+
+const Header = ({ setIsOpenModal }: HeaderProps) => {
   return (
     <AppBar
       sx={{
@@ -44,6 +48,7 @@ const Header = () => {
           </Box>
           <Box sx={{ ml: "auto", display: "flex", gap: "10px" }}>
             <Button
+              onClick={() => setIsOpenModal("signIn")}
               disableRipple
               sx={{
                 backgroundColor: "№FFAB08",
@@ -91,7 +96,6 @@ const Header = () => {
           <Box>
             <Typography component="h1"
               sx={{
-                fontFamily: "Nunito",
                 fontWeight: 800,
                 fontSize: "50px",
                 lineHeight: "120%",
@@ -125,7 +129,7 @@ const Header = () => {
                   fontSize: "16px",
                 }}
               >
-                599 сом
+                {" 599 сом"}
               </Typography>
             </Typography>
           </Box>

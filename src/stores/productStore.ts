@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import type { Product, MainPageResponse } from "../types";
-import axios from "axios";
+import type { Product, MainPageResponse } from "../types/mainPage/mainPage";
+import { api } from "./api";
 
 interface State {
   products: Product[];
@@ -14,7 +14,7 @@ export const useProductStore = create<State>((set) => {
     products: [],
     getProducts: async () => {
       try {
-        const { data: { products } } = await axios.get<Products>(
+        const { data: { products } } = await api.get<Products>(
           "https://erjanhoo.pythonanywhere.com/api/product/main_page"
         );
         console.log(products);

@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import type { Category, MainPageResponse } from "../types";
-import axios from "axios";
+import type { Category, MainPageResponse } from "../types/mainPage/mainPage";
+import { api } from "./api";
 
 interface State {
   categories: Category[];
@@ -17,7 +17,7 @@ export const useCategoryStore = create<State>((set) => {
     selectedCategory: null,
     getCategories: async () => {
       try {
-        const { data: { categories } } = await axios.get<Categories>(
+        const { data: { categories } } = await api.get<Categories>(
           "https://erjanhoo.pythonanywhere.com/api/product/main_page"
         );
         console.log(categories);

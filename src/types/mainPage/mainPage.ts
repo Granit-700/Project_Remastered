@@ -1,3 +1,5 @@
+import type { CartItem } from "../entities";
+
 export interface Category {
   id: number;
   name: string;
@@ -18,16 +20,6 @@ export interface Product {
     logo: string;
   };
   grams: number;
-}
-
-export interface CartItem {
-  id: number;
-  product: {
-    id: number;
-    name: string;
-  };
-  quantity: number;
-  total_price: number;
 }
 
 export interface Cart {
