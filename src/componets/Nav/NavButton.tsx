@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import type { Category } from "../../types";
+import type { Category } from "../../types/mainPage/mainPage";
 
 interface NavButtonProps {
   category: Category;
