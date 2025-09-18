@@ -5,7 +5,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import type { Product } from "../../types";
+import type { Product } from "../../types/mainPage/mainPage";
 
 interface ProductCardProps {
   product: Product;
