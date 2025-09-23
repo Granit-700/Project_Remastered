@@ -51,7 +51,7 @@ const Header = ({ setIsOpenModal }: HeaderProps) => {
               onClick={() => setIsOpenModal("signIn")}
               disableRipple
               sx={{
-                backgroundColor: "№FFAB08",
+                backgroundColor: "#FFAB08",
                 color: "#fff",
                 border: "1px solid #fff",
                 borderRadius: "5px",
@@ -62,7 +62,7 @@ const Header = ({ setIsOpenModal }: HeaderProps) => {
                 padding: "8px 12px",
               }}
             >
-              Sing In
+              Sign In
             </Button>
             <Button
               disableRipple
@@ -78,7 +78,7 @@ const Header = ({ setIsOpenModal }: HeaderProps) => {
                 padding: "8px 12px",
               }}
             >
-              Sing Up
+              Sign Up
             </Button>
           </Box>
         </Toolbar>

@@ -51,8 +51,8 @@ export const useAuthStore = create<State>((set) => {
     };
 
     set((store) => ({
-      accessToken: data.access || store.accessToken,
-      userId: data.user_id || store.userId,
+      accessToken: data.access ?? store.accessToken,
+      userId: data.user_id ?? store.userId,
       name: data.username ?? store.name,
       email: data.email ?? store.email,
     }));

@@ -6,14 +6,14 @@ import type { Category } from "../../types/mainPage/mainPage";
 interface NavButtonProps {
   category: Category;
   selectedCategory: Category | null;
-  setSeletedCategory: (value: Category) => void;
+  setSelectedCategory: (value: Category) => void;
 }
 
-const NavButton = ({ category, selectedCategory, setSeletedCategory }: NavButtonProps) => {  
+const NavButton = ({ category, selectedCategory, setSelectedCategory }: NavButtonProps) => {  
   return (
     <Button
       onClick={() => {
-        setSeletedCategory(category);
+        setSelectedCategory(category);
       }}
       disableRipple
       className={ selectedCategory?.id === category.id ? "selected" : ""}

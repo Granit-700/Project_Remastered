@@ -15,7 +15,7 @@ export const useProductStore = create<State>((set) => {
     getProducts: async () => {
       try {
         const { data: { products } } = await api.get<Products>(
-          "https://erjanhoo.pythonanywhere.com/api/product/main_page"
+          "/api/product/main_page"
         );
         console.log(products);
         set({ products: products });

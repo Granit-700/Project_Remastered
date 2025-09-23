@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "./componets/Layout/Layout";
-import SingInModal from "./componets/Modals/AuthModals/SignInModal/SignInModal";
+import SignInModal from "./componets/Modals/AuthModals/SignInModal/SignInModal";
 
 function App() {
   const [isOpenModal, setIsOpenModal] = useState<"signIn" | null>(null);
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       {isOpenModal === "signIn" ?
-        <SingInModal
+        <SignInModal
           isOpenModal={isOpenModal}
           setIsOpenModal={setIsOpenModal}
         /> : null}

@@ -18,7 +18,7 @@ export const useCategoryStore = create<State>((set) => {
     getCategories: async () => {
       try {
         const { data: { categories } } = await api.get<Categories>(
-          "https://erjanhoo.pythonanywhere.com/api/product/main_page"
+          "/api/product/main_page"
         );
         console.log(categories);
         set({

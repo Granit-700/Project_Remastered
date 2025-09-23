@@ -30,7 +30,7 @@ const Nav = () => {
             key={category.id}
             category={category}
             selectedCategory={selectedCategory}
-            setSeletedCategory={setSelectedCategory}
+            setSelectedCategory={setSelectedCategory}
           />
         );
       })}
