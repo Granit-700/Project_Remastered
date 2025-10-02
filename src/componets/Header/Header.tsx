@@ -12,7 +12,7 @@ interface HeaderProps {
 }
 
 const Header = ({ setIsOpenModal }: HeaderProps) => {
-  const headerBg = `url("data:image/svg+xl,%3csvg%20width='1440'%20height='466'%20viewBox='0%200%201440%20466'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='720'%20cy='-974'%20r='1440'%20fill='%23FFAB08'/%3e%3c/svg%3e")`;
+  const headerBg = `url("data:image/svg+xml,%3csvg%20width='1440'%20height='466'%20viewBox='0%200%201440%20466'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='720'%20cy='-974'%20r='1440'%20fill='%23FFAB08'/%3e%3c/svg%3e")`;
 
   return (
     <AppBar
