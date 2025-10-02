@@ -4,7 +4,6 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import headerBg from "../../assets/images/background_header.png";
 import headerLogo from "../../assets/icons/header_logo.svg";
 import headerBurger from "../../assets/icons/header_burger.svg";
 
@@ -13,11 +12,13 @@ interface HeaderProps {
 }
 
 const Header = ({ setIsOpenModal }: HeaderProps) => {
+  const headerBg = `url("data:image/svg+xl,%3csvg%20width='1440'%20height='466'%20viewBox='0%200%201440%20466'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='720'%20cy='-974'%20r='1440'%20fill='%23FFAB08'/%3e%3c/svg%3e")`;
+
   return (
     <AppBar
       sx={{
         position: "static",
-        backgroundImage: `url(${headerBg})`,
+        backgroundImage: headerBg,
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% 100%",
         backgroundPosition: "center",
