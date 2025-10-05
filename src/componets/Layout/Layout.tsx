@@ -5,15 +5,16 @@ import Nav from "../Nav/Nav";
 import SideBar from "../SideBar/SideBar";
 import Footer from "../Footer/Footer";
 import Main from "../Main/Main";
+import type { ModalType } from "../../stores/modalStore";
 
 interface LayoutProps {
-  setIsOpenModal: (value: "signIn" | null) => void;
-}
+  setOpenModal: (modal: ModalType) => void;
+};
 
-const Layout = ({ setIsOpenModal }: LayoutProps) => {
+const Layout = ({setOpenModal}: LayoutProps) => {
   return (
     <>
-      <Header setIsOpenModal={setIsOpenModal} />
+      <Header setOpenModal={setOpenModal} />
       <Container
         disableGutters
         maxWidth={false}

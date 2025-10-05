@@ -1,18 +1,14 @@
-import { useState } from "react";
 import Layout from "./componets/Layout/Layout";
 import SignInModal from "./componets/Modals/AuthModals/SignInModal/SignInModal";
+import { useModalStore } from "./stores/modalStore";
 
 function App() {
-  const [isOpenModal, setIsOpenModal] = useState<"signIn" | null>(null);
+  const { openModal, setOpenModal, closeModal } = useModalStore();
 
   return (
     <>
-      {isOpenModal === "signIn" ?
-        <SignInModal
-          isOpenModal={isOpenModal}
-          setIsOpenModal={setIsOpenModal}
-        /> : null}
-      <Layout setIsOpenModal={setIsOpenModal} />
+      {openModal === "signIn" && <SignInModal openModal={openModal} closeModal={closeModal} />}
+      <Layout setOpenModal={setOpenModal} />
     </>
   );
 };

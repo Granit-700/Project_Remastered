@@ -15,13 +15,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useError, useSignIn } from "../../../../stores/authStore";
 import { Typography } from "@mui/material";
+import type { ModalType } from "../../../../stores/modalStore";
 
 interface SignInModalProps {
-  isOpenModal: string | null;
-  setIsOpenModal: (value: "signIn" | null) => void;
+  openModal: ModalType;
+  closeModal: () => void;
 }
 
-const SignInModal = ({ isOpenModal, setIsOpenModal }: SignInModalProps) => {
+const SignInModal = ({ openModal, closeModal }: SignInModalProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const signInFromSchema = Yup.object({
@@ -61,7 +62,7 @@ const SignInModal = ({ isOpenModal, setIsOpenModal }: SignInModalProps) => {
       .then(() => {
         console.log("процесс завершен");
 
-        // setIsOpenModal(null);
+        // closeModal(null);
       })
   };
 
@@ -69,8 +70,8 @@ const SignInModal = ({ isOpenModal, setIsOpenModal }: SignInModalProps) => {
 
   return (
     <Dialog
-      open={Boolean(isOpenModal)}
-      onClose={() => setIsOpenModal(null)}
+      open={Boolean(openModal)}
+      onClose={() => closeModal()}
       slotProps={{ paper: { sx: { p: "24px", gap: "8px" } } }}
     >
       <DialogTitle

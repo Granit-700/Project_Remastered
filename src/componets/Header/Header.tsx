@@ -6,12 +6,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import headerLogo from "../../assets/icons/header_logo.svg";
 import headerBurger from "../../assets/icons/header_burger.svg";
+import type { ModalType } from "../../stores/modalStore";
 
 interface HeaderProps {
-  setIsOpenModal: (value: "signIn" | null) => void;
-}
+  setOpenModal: (modal: ModalType) => void;
+};
 
-const Header = ({ setIsOpenModal }: HeaderProps) => {
+const Header = ({ setOpenModal }: HeaderProps) => {
   const headerBg = `url("data:image/svg+xml,%3csvg%20width='1440'%20height='466'%20viewBox='0%200%201440%20466'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='720'%20cy='-974'%20r='1440'%20fill='%23FFAB08'/%3e%3c/svg%3e")`;
 
   return (
@@ -49,7 +50,7 @@ const Header = ({ setIsOpenModal }: HeaderProps) => {
           </Box>
           <Box sx={{ ml: "auto", display: "flex", gap: "10px" }}>
             <Button
-              onClick={() => setIsOpenModal("signIn")}
+              onClick={() => setOpenModal("signIn")}
               disableRipple
               sx={{
                 backgroundColor: "#FFAB08",
