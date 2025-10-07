@@ -8,13 +8,13 @@ import IconButton from "@mui/material/IconButton";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import InputAdornment from "@mui/material/InputAdornment";
+import Typography from "@mui/material/Typography";
 import { useController, useForm } from "react-hook-form";
 import type { SignInRequest } from "../../../../types/auth/auth";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useError, useSignIn } from "../../../../stores/authStore";
-import { Typography } from "@mui/material";
 import type { ModalType } from "../../../../stores/modalStore";
 
 interface SignInModalProps {

@@ -4,8 +4,13 @@ import { useGetProducts, useProducts } from "../../stores/productStore";
 import { useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { useSelectedCategory } from "../../stores/categoryStore";
+import type { ModalType } from "../../stores/modalStore";
 
-const Main = () => {
+interface MainProps {
+  setOpenModal: (modal :ModalType) => void;
+};
+
+const Main = ({ setOpenModal }: MainProps) => {
   const getProducts = useGetProducts();
   const products = useProducts();
   const selectedCategory = useSelectedCategory();
@@ -33,7 +38,11 @@ const Main = () => {
         </Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: "30px" }}>
           {filteredProducts.map((product) => {
-            return <ProductCard key={product.id} product={product} />
+            return <ProductCard
+              key={product.id}
+              product={product}
+              setOpenModal={setOpenModal}
+            />
           })}
         </Box>
       </Box>

@@ -26,7 +26,7 @@ const Layout = ({setOpenModal}: LayoutProps) => {
         <Nav />
         <Box sx={{ display: "flex", gap: "30px", alignItems: "flex-start" }}>
           <SideBar />
-          <Main />
+          <Main setOpenModal={setOpenModal} />
         </Box>
       </Container>
       <Footer />

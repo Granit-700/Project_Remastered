@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export type ModalType = "signIn" | null;
+export type ModalType = "signIn" | "ProductDitails" | null;
 
 interface State {
   openModal: ModalType;
