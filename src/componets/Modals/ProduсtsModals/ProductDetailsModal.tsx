@@ -8,13 +8,16 @@ import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import type { ModalType } from "../../../stores/modalStore";
 import close from "../../../assets/icons/close.svg";
+import { useProductDetails } from "../../../stores/productDetailsStore";
 
-interface ProductDeatailsModalProps {
+interface ProductDetailsModalProps {
   openModal: ModalType;
   closeModal: () => void;
 };
 
-const ProductDeatailsModal = ({ openModal, closeModal }: ProductDeatailsModalProps) => {
+const ProductDetailsModal = ({ openModal, closeModal }: ProductDetailsModalProps) => {
+  const productDetalis = useProductDetails();
+
   return (
     <Dialog
       open={Boolean(openModal)}
@@ -26,8 +29,15 @@ const ProductDeatailsModal = ({ openModal, closeModal }: ProductDeatailsModalPro
         "& .MuiPaper-root": {
           mt: "150px",
         },
+        overflowY: "auto",
+        scrollbarWidth: "none",
       }}
       slotProps={{
+        backdrop: {
+          sx: {
+            backgroundColor: "rgba(0, 0, 0, 0.8)"
+          }
+        },
         paper: {
           sx: {
             padding: "24px 24px 36px",
@@ -75,10 +85,13 @@ const ProductDeatailsModal = ({ openModal, closeModal }: ProductDeatailsModalPro
       >
         <Box
           component="img"
-          src={"url"}
+          src={productDetalis?.image}
           alt={"titleImage"}
-          minWidth="276px"
-          height="220px"
+          sx={{
+            minWidth: "276px",
+            height: "220px",
+            borderRadius: "16px",
+          }}
         />
         <Box>
           <Typography
@@ -89,9 +102,7 @@ const ProductDeatailsModal = ({ openModal, closeModal }: ProductDeatailsModalPro
               mb: "10px",
             }}
           >
-            {`Lorem ipsum dolor sit amet consectetur 
-            adipisicing elit. Hic, quam dignissimos officia ut eius optio 
-            tenetur qui voluptatum molestias deleniti?`}
+            {productDetalis?.description}
           </Typography>
           <Box>
             <Typography
@@ -121,7 +132,7 @@ const ProductDeatailsModal = ({ openModal, closeModal }: ProductDeatailsModalPro
                   color: "#000",
                 }}
               >
-                {"NULL"}
+                {productDetalis?.ingredients}
               </Typography>
             </Box>
             {/* временный вариант */}
@@ -133,7 +144,7 @@ const ProductDeatailsModal = ({ openModal, closeModal }: ProductDeatailsModalPro
                 color: "#B1B1B1",
               }}
             >
-              {+" г, ккал "}
+              {`${productDetalis?.grams}г, ккал ${undefined}`}
             </Typography>
           </Box>
         </Box>
@@ -216,11 +227,11 @@ const ProductDeatailsModal = ({ openModal, closeModal }: ProductDeatailsModalPro
             color: "#000",
           }}
         >
-          {+ " сом"}
+          {`${productDetalis?.original_price} сом`}
         </Typography>
       </DialogActions>
     </Dialog>
   );
 };
 
-export default ProductDeatailsModal;
+export default ProductDetailsModal;

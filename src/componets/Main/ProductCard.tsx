@@ -7,6 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import type { Product } from "../../types/mainPage/mainPage";
 import type { ModalType } from "../../stores/modalStore";
+import { useGetProductDetails } from "../../stores/productDetailsStore";
 
 interface ProductCardProps {
   product: Product;
@@ -14,11 +15,16 @@ interface ProductCardProps {
 };
 
 const ProductCard = ({ product, setOpenModal }: ProductCardProps) => {
+  const getProductDitails = useGetProductDetails();
+
   return (
     <Card sx={{ p: "12px", borderRadius: "18px" }}>
       <CardActionArea
         disableRipple
-        onClick={() => setOpenModal("ProductDitails")}
+        onClick={() => {
+          setOpenModal("ProductDitails");
+          getProductDitails(product.id);
+        }}
       >
         <CardMedia
           component="img"
