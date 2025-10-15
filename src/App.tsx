@@ -1,5 +1,6 @@
 import Layout from "./componets/Layout/Layout";
 import SignInModal from "./componets/Modals/AuthModals/SignInModal/SignInModal";
+import SignUpModal from "./componets/Modals/AuthModals/SignUpModal/SignUpModal";
 import ProductDetailsModal from "./componets/Modals/ProduсtsModals/ProductDetailsModal";
 import { useModalStore } from "./stores/modalStore";
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       {openModal === "signIn" && <SignInModal openModal={openModal} closeModal={closeModal} />}
+      {openModal === "signUp" && <SignUpModal openModal={openModal} closeModal={closeModal} />}
       {openModal === "ProductDitails" && <ProductDetailsModal openModal={openModal} closeModal={closeModal} />}
       <Layout setOpenModal={setOpenModal} />
     </>

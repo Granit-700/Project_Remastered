@@ -67,6 +67,7 @@ const Header = ({ setOpenModal }: HeaderProps) => {
               Sign In
             </Button>
             <Button
+            onClick={() => setOpenModal("signUp")}
               disableRipple
               sx={{
                 backgroundColor: "#fff",
