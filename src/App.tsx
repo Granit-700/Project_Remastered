@@ -1,7 +1,7 @@
-import Layout from "./componets/Layout/Layout";
-import SignInModal from "./componets/Modals/AuthModals/SignInModal/SignInModal";
-import SignUpModal from "./componets/Modals/AuthModals/SignUpModal/SignUpModal";
-import ProductDetailsModal from "./componets/Modals/ProduсtsModals/ProductDetailsModal";
+import Layout from "./components/Layout/Layout";
+import SignInModal from "./components/Modals/AuthModals/SignInModal/SignInModal";
+import SignUpModal from "./components/Modals/AuthModals/SignUpModal/SignUpModal";
+import ProductDetailsModal from "./components/Modals/ProduсtsModals/ProductDetailsModal";
 import { useModalStore } from "./stores/modalStore";
 
 function App() {
